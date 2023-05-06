@@ -136,6 +136,7 @@ body {
   display: flex;
   align-items: center;
   padding: 0 10%;
+  page-break-after: always;
 }
 
 .home-content {
@@ -242,52 +243,86 @@ body {
     line-height: 1.2;
   }
 }
+.works {
+  page-break-after: always;
+}
+
+.terminal {
+  opacity: 0%;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 85%;
+  }
+}
+.fakeScreen {
+  background-color: #121420;
+  box-sizing: border-box;
+  width: 550px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
 .fakeButtons {
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
-  border: 1px solid #000;
+  border: 1px solid #ff5555;
   position: relative;
-  top: 6px;
-  left: 6px;
-  background-color: #ff3b47;
-  border-color: #9d252b;
+  top: 15px;
+  left: 15px;
+  background-color: #ff5555;
   display: inline-block;
 }
 
 .fakeMinimize {
-  left: 11px;
-  background-color: #ffc100;
-  border-color: #9d802c;
+  left: 10px;
+  background-color: #f1fa8c;
+  border-color: #f1fa8c;
 }
 
 .fakeZoom {
-  left: 16px;
-  background-color: #00d742;
-  border-color: #049931;
+  left: 5px;
+  background-color: #50fa7b;
+  border-color: #50fa7b;
 }
 
 .fakeMenu {
-  position: relative;
   width: 550px;
   box-sizing: border-box;
   height: 25px;
-  background-color: #bbb;
+  background-color: #121420;
   margin: 0 auto;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
-.fakeScreen {
-  background-color: #151515;
-  box-sizing: border-box;
-  width: 550px;
-  margin: 0 auto;
-  padding: 20px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+.command {
+  color: #50fa7b;
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end;
 }
 
-/****************************************************************************************************************/
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

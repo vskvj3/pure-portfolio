@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=JetBrains+Mono:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'JetBrains Mono', Helvetica, sans-serif;
+  font-family: "JetBrains Mono", Helvetica, sans-serif;
 }
 
 body {
@@ -111,7 +111,7 @@ body {
 }
 
 .navbar a {
-    position: relative;
+  position: relative;
   font-size: 18px;
   color: aliceblue;
   text-decoration: none;
@@ -121,15 +121,15 @@ body {
 }
 
 .navbar a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #282a36;
-    animation: showRight 0.5s ease-out  forwards;
-    animation-delay: 0.7s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #282a36;
+  animation: showRight 0.5s ease-out forwards;
+  animation-delay: 0.7s;
 }
 
 .navbar a:hover,
@@ -142,6 +142,7 @@ body {
   display: flex;
   align-items: center;
   padding: 0 10%;
+  page-break-after: always;
 }
 
 .home-content {
@@ -154,8 +155,8 @@ body {
   font-size: 56px;
   font-weight: 800;
   line-height: 0;
-    animation: showFont 1s ease forwards;
-    animation-delay: 0.4s;
+  animation: showFont 1s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .home-content h3 {
@@ -240,13 +241,100 @@ body {
 }
 
 @keyframes showLeft {
-    100% {
-      width: 100%;
-    }
+  100% {
+    width: 100%;
   }
+}
 
 @keyframes showFont {
-    100% {
-      line-height: 1.2;
-    }
+  100% {
+    line-height: 1.2;
   }
+}
+
+.works {
+  page-break-after: always;
+}
+
+// terminal
+.terminal {
+  opacity: 0%;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 85%;
+  }
+}
+
+.fakeScreen {
+  background-color: #121420;
+  box-sizing: border-box;
+  width: 550px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 20px;
+  // border-radius: 5px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.fakeButtons {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid #ff5555;
+  position: relative;
+  top: 15px;
+  left: 15px;
+  background-color: #ff5555;
+  display: inline-block;
+}
+
+.fakeMinimize {
+  left: 10px;
+  background-color: #f1fa8c;
+  border-color: #f1fa8c;
+}
+
+.fakeZoom {
+  left: 5px;
+  background-color: #50fa7b;
+  border-color: #50fa7b;
+}
+
+.fakeMenu {
+  width: 550px;
+  box-sizing: border-box;
+  height: 25px;
+  background-color: #121420;
+  margin: 0 auto;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.command {
+  color: #50fa7b;
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
