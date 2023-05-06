@@ -136,7 +136,6 @@ body {
   display: flex;
   align-items: center;
   padding: 0 10%;
-  page-break-after: always;
 }
 
 .home-content {
@@ -248,6 +247,7 @@ body {
 }
 
 .terminal {
+  flex: 50%;
   opacity: 0%;
   animation: fadeIn 1s ease forwards;
   animation-delay: 1s;
@@ -261,12 +261,14 @@ body {
 .fakeScreen {
   background-color: #121420;
   box-sizing: border-box;
-  width: 550px;
-  height: 60px;
+  width: 100%;
+  height: fit-content;
   margin: 0 auto;
-  padding: 20px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-radius: 15px;
+}
+
+.Tcontents {
+  padding: 15px;
 }
 
 .fakeButtons {
@@ -303,17 +305,32 @@ body {
   border-top-left-radius: 15px;
 }
 
+span {
+  display: inline-block;
+}
+
 .command {
+  display: inline-block;
   color: #50fa7b;
-  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end;
+  overflow: hidden;
+  width: 0%;
+  border-right: 0.15em solid transparent;
+  white-space: nowrap;
+  animation: typing 1s steps(6, end) forwards, blink-caret 0.5s step-end forwards infinite;
+  animation-delay: 2s;
 }
 
 @keyframes typing {
-  from {
+  0% {
     width: 0;
   }
-  to {
-    width: 100%;
+  99.9% {
+    width: 12%;
+    border-right: 0.15em solid orange;
+  }
+  100% {
+    width: 12%;
+    border: none;
   }
 }
 @keyframes blink-caret {
@@ -321,7 +338,145 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: #f8f8f2;
+  }
+}
+.response p {
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.response p.responseText {
+  width: 11.5em;
+  opacity: 0;
+  -webkit-animation: type2 1s steps(20, end);
+  animation: type2 1s steps(30, end);
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.response p.responseText2 {
+  width: 11.5em;
+  opacity: 0;
+  -webkit-animation: type2 1s steps(20, end);
+  animation: type2 1s steps(30, end);
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.response p.responseText3 {
+  width: 11.5em;
+  opacity: 0;
+  -webkit-animation: type2 1s steps(20, end);
+  animation: type2 1s steps(30, end);
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.response p.responseText4 {
+  width: 11.5em;
+  opacity: 0;
+  -webkit-animation: type2 1s steps(20, end);
+  animation: type2 1s steps(30, end);
+  -webkit-animation-delay: 7s;
+  animation-delay: 7s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.prompt {
+  opacity: 0;
+  animation: show 1s linear forwards, blink-caret 0.5s step-end forwards infinite;
+  animation-delay: 8s;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
   }
 }
 
